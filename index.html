@@ -15,10 +15,13 @@
                     Search your classcode
                 </h3>
                 <h5 class="text-center">
-                    <i>Press enter to get the ical file</i>
+                    <i>Press enter or click "Submit" to get the ical file</i>
                 </h5>
-                <div class="form-group">
-                    <input type="search" id="search" class="form-control form-control-lg" placeholder="Enter classcode">
+                <div class="input-group">
+                    <input type="search" id="search" class="form-control" placeholder="Enter classcode">
+                    <span class="input-group-btn">
+                        <button class="btn btn-primary" onclick="return checkSubmit(13);">Submit</button>
+                    </span>
                 </div>
                 <div id="match-list">
                 </div>

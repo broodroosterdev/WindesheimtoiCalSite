@@ -43,8 +43,8 @@ const selectCard = code => {
     search.value = code;
 }
 //Checks if input is valid and redirects to api
-const checkSubmit = event => {
-    if(event.keyCode == 13){
+const checkSubmit = key => {
+    if(key == 13){
         if(searchClasscodes(search.value)){
             window.location.replace(`https://www.broodrooster.dev/windesheim/api/${search.value}`);
         }
@@ -52,4 +52,4 @@ const checkSubmit = event => {
 }
 
 search.addEventListener('keyup', () => searchClasscodes(search.value));
-document.addEventListener('keypress', event => checkSubmit(event));
+document.addEventListener('keypress', event => checkSubmit(event.keyCode));

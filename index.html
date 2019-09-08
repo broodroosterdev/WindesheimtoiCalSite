@@ -5,16 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Windesheim iCal</title>
 </head>
 <body>
     <button class="btn btn-success" onclick="redirectTikkie();">Wil je me bedanken?
-        Stuur me een kopje koffie!</button>
+        Stuur me een kopje koffie! <i class="fa fa-coffee" aria-hidden="true"></i>
+    </button>
     <div class="container mt-5">
         <div class="row">
             <div class="col-md-6 m-auto">
                 <h3 class="text-center mb-3">
-                    Zoek je klascode
+                    <i class="fa fa-search" aria-hidden="true"></i>
+Zoek je klascode
                 </h3>
                 <h5 class="text-center">
                     <i>Druk op enter of klik op "Download" om het ical bestand te downloaden</i>
@@ -22,9 +25,12 @@
                 <div class="input-group">
                     <input type="search" id="search" class="form-control" placeholder="Voer je klascode in">
                     <span class="input-group-btn">
-                        <button class="btn btn-primary" onclick="return checkSubmit(13);">Download</button>
-                        <button class="btn btn-info" onclick="return copyURL()">Kopieer ICS URL</button>
+                        <button class="btn btn-primary" onclick="return checkSubmit(13);"><i class="fa fa-download" aria-hidden="true"></i>
+                            Download</button>
+                        <button class="btn btn-info" onclick="return copyURL()"><i class="fa fa-clipboard" aria-hidden="true"></i>
+                            Kopieer ICS URL</button>
                     </span>
+                    <span>(?)</span>
                 </div>
                 <div id="match-list">
                 </div>

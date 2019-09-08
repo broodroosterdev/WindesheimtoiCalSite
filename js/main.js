@@ -27,7 +27,7 @@ const outputHtml = matches => {
     if(matches.length > 0){
         //console.log(matches);
         const html = matches.map(match => `
-            <div class="card card-body mb-4" onclick=selectCard("${match.code}")>
+            <div class="card card-body mb-2" onclick=selectCard("${match.code}")>
                 <span class="text-primary">${match.code}</span>
             </div>
         `).join('');
@@ -116,6 +116,10 @@ const copyURL = () => {
 
 const redirectTikkie = () => {
     window.location.href = "https://tikkie.me/pay/hmqsk64id5scn4ve9he8";
+}
+
+const redirectiCalInfo = () => {
+    window.location.href = "https://www.broodrooster.dev/windesheim/icalinfo.html"
 }
 
 search.addEventListener('keyup', () => searchClasscodes(search.value));

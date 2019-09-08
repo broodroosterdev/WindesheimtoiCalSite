@@ -7,6 +7,11 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Windesheim iCal</title>
+    <style>
+        .btn-thirds {
+        width:32.9%;
+        }
+    </style>
 </head>
 <body>
     <button class="btn btn-success" onclick="redirectTikkie();">Wil je me bedanken?
@@ -23,15 +28,13 @@ Zoek je klascode
                     <i>Druk op enter of klik op "Download" om het ical bestand te downloaden</i>
                 </h5>
                 <div class="input-group">
-                    <input type="search" id="search" class="form-control" placeholder="Voer je klascode in">
-                    <span class="input-group-btn">
-                        <button class="btn btn-primary" onclick="return checkSubmit(13);"><i class="fa fa-download" aria-hidden="true"></i>
-                            Download</button>
-                        <button class="btn btn-info" onclick="return copyURL()"><i class="fa fa-clipboard" aria-hidden="true"></i>
-                            Kopieer ICS URL</button>
-                    </span>
-                    <span>(?)</span>
+                    <input type="search" id="search" class="form-control" placeholder="Voer je klascode in">        
                 </div>
+                <button class="btn btn-thirds btn-primary" onclick="return checkSubmit(13);"><i class="fa fa-download" aria-hidden="true"></i>
+                    Download</button>
+                <button class="btn btn-thirds btn-info" onclick="return copyURL()"><i class="fa fa-clipboard" aria-hidden="true"></i>
+                    Kopieer ICS URL</button>
+                <a href="/icalinfo.html" class="btn btn-thirds btn-warning" role="button">Hoe gebruik ik dit?</a>
                 <div id="match-list">
                 </div>
             </div>

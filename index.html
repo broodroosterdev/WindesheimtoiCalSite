@@ -5,22 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <title>Windesheim to iCal</title>
+    <title>Windesheim iCal</title>
 </head>
 <body>
+    <button class="btn btn-success" onclick="redirectTikkie();">Wil je me bedanken?
+        Stuur me een kopje koffie!</button>
     <div class="container mt-5">
         <div class="row">
             <div class="col-md-6 m-auto">
                 <h3 class="text-center mb-3">
-                    Search your classcode
+                    Zoek je klascode
                 </h3>
                 <h5 class="text-center">
-                    <i>Press enter or click "Submit" to get the ical file</i>
+                    <i>Druk op enter of klik op "Download" om het ical bestand te downloaden</i>
                 </h5>
                 <div class="input-group">
-                    <input type="search" id="search" class="form-control" placeholder="Enter classcode">
+                    <input type="search" id="search" class="form-control" placeholder="Voer je klascode in">
                     <span class="input-group-btn">
-                        <button class="btn btn-primary" onclick="return checkSubmit(13);">Submit</button>
+                        <button class="btn btn-primary" onclick="return checkSubmit(13);">Download</button>
+                        <button class="btn btn-info" onclick="return copyURL()">Kopieer ICS URL</button>
                     </span>
                 </div>
                 <div id="match-list">

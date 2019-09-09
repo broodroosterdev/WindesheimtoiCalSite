@@ -11,7 +11,11 @@
 </head>
 
 <body>
+
     <div class="jumbotron">
+        <button class="btn btn-success" onclick="redirectTikkie();">Wil je me bedanken?
+            Stuur me een kopje koffie! <i class="fa fa-coffee" aria-hidden="true"></i>
+        </button>
         <h2 class="display-4">Wat is het verschil tussen een iCal bestand en een ics URL?</h2>
         <div class="card-deck">
             <div class="card text-white bg-primary mb-3">
@@ -72,61 +76,62 @@
                 </p>
             </a>
             <a href="#" class="list-group-item list-group-item-action flex-column align-items-start active">
-                    <div class="d-flex w-100 justify-content-between">
-                        <h5 class="mb-1">Een iCal bestand of ics URL importeren in Outlook (Windows, macOS, Android, IOS)</h5>
-                    </div>
-                    <p class="mb-1">
-                        <i class="fa fa-circle" aria-hidden="true"></i>
-                        Ga naar het Windesheim Informatie Portaal
-                        <br><i class="fa fa-circle" aria-hidden="true"></i>
-                        Druk op de vierkanten in de rechter bovenhoek en kies Outlook</br>
-                        <i class="fa fa-circle" aria-hidden="true"></i>
-                        Selecteer het agenda icoon in de linker benedenhoek
-                        <br><i class="fa fa-circle" aria-hidden="true"></i>
-                        Druk op Agenda Importeren</br>
-                        <i class="fa fa-circle" aria-hidden="true"></i>
-                        Voor een iCal bestand:
-                        <br><i class="fa fa-circle" aria-hidden="true"></i>
-                        Druk op Uit bestand</br>
-                        <i class="fa fa-circle" aria-hidden="true"></i>
-                        Open het gedownloade iCal bestand
-                        <br><i class="fa fa-circle" aria-hidden="true"></i>
-                        Voor een isc URL:</br>
-                        <i class="fa fa-circle" aria-hidden="true"></i>
-                        Druk op Van internet
-                        <br><i class="fa fa-circle" aria-hidden="true"></i>
-                        Voer onder "Maak een koppeling naar de agenda" de gekopieerde URL in</br>
-                        <i class="fa fa-circle" aria-hidden="true"></i>
-                        Voer een passende agenda-naam in en druk op Importeren
-                        <br><i class="fa fa-circle" aria-hidden="true"></i>
-                        Je rooster is geïmporteerd!</br>
-                    </p>
-                </a>
-                <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-                        <div class="d-flex w-100 justify-content-between">
-                            <h5 class="mb-1">Een iCal bestand importeren in Google Calender (Windows, macOS, Android, IOS)</h5>
-                        </div>
-                        <p class="mb-1">
-                            <i class="fa fa-circle" aria-hidden="true"></i>
-                            Open instellingen
-                            <br><i class="fa fa-circle" aria-hidden="true"></i>
-                            Klik op "Importeren en exporteren"</br>
-                            <i class="fa fa-circle" aria-hidden="true"></i>
-                            Klik op "Selecteer een bestand op je computer"
-                            <br><i class="fa fa-circle" aria-hidden="true"></i>
-                            Open het gedownloade iCal bestand</br>
-                            <i class="fa fa-circle" aria-hidden="true"></i>
-                            Kies de agenda waar je de afspraken aan wilt toevoegen
-                            <br><i class="fa fa-circle" aria-hidden="true"></i>
-                            Klik op "Importeren"</br>
-                            <i class="fa fa-circle" aria-hidden="true"></i>
-                            Je rooster is geïmporteerd
-                        </p>
-                    </a>
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">Een iCal bestand of ics URL importeren in Outlook (Windows, macOS, Android, IOS)
+                    </h5>
+                </div>
+                <p class="mb-1">
+                    <i class="fa fa-circle" aria-hidden="true"></i>
+                    Ga naar het Windesheim Informatie Portaal
+                    <br><i class="fa fa-circle" aria-hidden="true"></i>
+                    Druk op de vierkanten in de rechter bovenhoek en kies Outlook</br>
+                    <i class="fa fa-circle" aria-hidden="true"></i>
+                    Selecteer het agenda icoon in de linker benedenhoek
+                    <br><i class="fa fa-circle" aria-hidden="true"></i>
+                    Druk op Agenda Importeren</br>
+                    <i class="fa fa-circle" aria-hidden="true"></i>
+                    Voor een iCal bestand:
+                    <br><i class="fa fa-circle" aria-hidden="true"></i>
+                    Druk op Uit bestand</br>
+                    <i class="fa fa-circle" aria-hidden="true"></i>
+                    Open het gedownloade iCal bestand
+                    <br><i class="fa fa-circle" aria-hidden="true"></i>
+                    Voor een isc URL:</br>
+                    <i class="fa fa-circle" aria-hidden="true"></i>
+                    Druk op Van internet
+                    <br><i class="fa fa-circle" aria-hidden="true"></i>
+                    Voer onder "Maak een koppeling naar de agenda" de gekopieerde URL in</br>
+                    <i class="fa fa-circle" aria-hidden="true"></i>
+                    Voer een passende agenda-naam in en druk op Importeren
+                    <br><i class="fa fa-circle" aria-hidden="true"></i>
+                    Je rooster is geïmporteerd!</br>
+                </p>
+            </a>
+            <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">Een iCal bestand importeren in Google Calender (Windows, macOS, Android, IOS)</h5>
+                </div>
+                <p class="mb-1">
+                    <i class="fa fa-circle" aria-hidden="true"></i>
+                    Open instellingen
+                    <br><i class="fa fa-circle" aria-hidden="true"></i>
+                    Klik op "Importeren en exporteren"</br>
+                    <i class="fa fa-circle" aria-hidden="true"></i>
+                    Klik op "Selecteer een bestand op je computer"
+                    <br><i class="fa fa-circle" aria-hidden="true"></i>
+                    Open het gedownloade iCal bestand</br>
+                    <i class="fa fa-circle" aria-hidden="true"></i>
+                    Kies de agenda waar je de afspraken aan wilt toevoegen
+                    <br><i class="fa fa-circle" aria-hidden="true"></i>
+                    Klik op "Importeren"</br>
+                    <i class="fa fa-circle" aria-hidden="true"></i>
+                    Je rooster is geïmporteerd
+                </p>
+            </a>
         </div>
-        
-    </div>
 
+    </div>
+    <script src="js/main.js"></script>
 </body>
 
 </html>

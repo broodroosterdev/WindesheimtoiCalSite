@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,10 +10,11 @@
     <title>Windesheim iCal</title>
     <style>
         .btn-thirds {
-        width:32.9%;
+            width: 32.9%;
         }
     </style>
 </head>
+
 <body>
     <button class="btn btn-success" onclick="redirectTikkie();">Wil je me bedanken?
         Stuur me een kopje koffie! <i class="fa fa-coffee" aria-hidden="true"></i>
@@ -22,19 +24,22 @@
             <div class="col-md-6 m-auto">
                 <h3 class="text-center mb-3">
                     <i class="fa fa-search" aria-hidden="true"></i>
-Zoek je klascode
+                    Zoek je klascode
                 </h3>
                 <h5 class="text-center">
                     <i>Druk op enter of klik op "Download" om het ical bestand te downloaden</i>
                 </h5>
                 <div class="input-group">
-                    <input type="search" id="search" class="form-control" placeholder="Voer je klascode in">        
+                    <input type="search" id="search" class="form-control" placeholder="Voer je klascode in">
                 </div>
-                <button class="btn btn-thirds btn-primary" onclick="return checkSubmit(13);"><i class="fa fa-download" aria-hidden="true"></i>
+                <button class="btn btn-thirds btn-primary" onclick="return checkSubmit(13);"><i class="fa fa-download"
+                        aria-hidden="true"></i>
                     Download</button>
-                <button class="btn btn-thirds btn-info" onclick="return copyURL()"><i class="fa fa-clipboard" aria-hidden="true"></i>
+                <button class="btn btn-thirds btn-info" onclick="return copyURL()"><i class="fa fa-clipboard"
+                        aria-hidden="true"></i>
                     Kopieer ICS URL</button>
-                <a href="/windesheim/icalinfo.html" class="btn btn-thirds btn-warning" role="button">Hoe gebruik ik dit?</a>
+                <a href="/windesheim/icalinfo.html" class="btn btn-thirds btn-warning" role="button">Hoe gebruik ik
+                    dit?</a>
                 <div id="match-list">
                 </div>
             </div>
@@ -42,4 +47,5 @@ Zoek je klascode
     </div>
     <script src="js/main.js"></script>
 </body>
+
 </html>

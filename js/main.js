@@ -15,7 +15,7 @@ const searchClasscodes = async searchText => {
         matches = [];
     }
     outputHtml(matches);
-    if(matches.length === 0 && searchText !== ""){
+    if(matches.length === 0){
         return false;
     } else if(matches.length > 0){
         return true;
@@ -31,6 +31,7 @@ const outputHtml = matches => {
                 <span class="text-primary">${match.code}</span>
             </div>
         `).join('');
+
         matchList.innerHTML = html;
 
         

@@ -17,7 +17,7 @@ const searchClasscodes = async searchText => {
     outputHtml(matches);
     if(matches.length === 0){
         return false;
-    } else if(matches.length > 0){
+    } else if(matches.length > 0 && searchText !== ""){
         return true;
     }
 }

@@ -12,38 +12,69 @@
         .btn-thirds {
             width: 32.6%;
         }
-        .stacked {
-            flex-direction: column;
-        }
     </style>
 </head>
 
 <body onload="init()">
-    <a href="https://tikkie.me/pay/fhplmcknossbbdetijvb" class="btn btn-success" role="button">Wil je dit project
-                steunen? Stuur een kopje koffie! <i class="fa fa-coffee" aria-hidden="true"></i></a>
-                <div id="thanks" class="modal fade" role="dialog">
-                        <div class="modal-dialog">
-                      
-                          <!-- Modal content-->
-                          <div class="modal-content">
-                            <div class="modal-header">
-                              <button type="button" class="close" data-dismiss="modal"></button>
-                              <h4 class="modal-title">Modal Header</h4>
-                            </div>
-                            <div class="modal-body">
-                              <p>Some text in the modal.</p>
-                            </div>
-                            <div class="modal-footer">
-                              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                            </div>
-                          </div>
-                      
-                        </div>
-                      </div>
+    <div class="card text-white bg-success mb-1" style="max-width: 25rem;">
+        <div class="card-body">
+            <h5 class="card-title">Wil je dit project steunen? Stuur een donatie! <a
+                    href="https://tikkie.me/pay/fhplmcknossbbdetijvb" class="btn btn-thirds btn-primary pull-right"
+                    role="button">Doneer</a></h5>
+            <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 16.5%;" aria-valuenow="0.76"
+                    aria-valuemin="0" aria-valuemax="4"></div>
+            </div>
+            <p class="card-text">
+                Er is 4 euro per maand nodig om deze site in de lucht te houden<br>
+                Jullie hebben al €0,66 gedoneerd. Bedankt daarvoor!
+            </p>
+        </div>
+    </div>
+    <div class="card text-white bg-primary mb-1" style="max-width: 25rem;">
+        <h5 class="card-header">Ontvangen donaties:</h5>
+        <div class="card-body">
+            <p>Maaike (€0,50)</p>
+            <p>J. Broer (€0,16)</p>
+        </div>
+    </div>
+    <div class="modal" id="thanks">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Hé, bedankt voor het gebruiken van deze website.</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body text-white">
+                    <p>
+                        Deze site is gratis en zonder advertenties en dat wil ik graag zo houden.
+                        Het in de lucht houden van een website is helaas niet zonder kosten.
+                        Daarom zou ik het fijn vinden als je mij een klein beetje helpt.
+                        <br />
+                        <br />
+                        Dit kun je doen op 2 manieren:
+                        <br />
+                        <br />
+                        1. Deel deze site met je mede-studenten
+                        <br />
+                        2. Doneer via Tikkie (met 4 euro aan donaties helpen jullie de website voor een maand!)
+
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" onclick="return copyLink();">Kopieer de link van deze
+                        website</button>
+                    <a href="https://tikkie.me/pay/fhplmcknossbbdetijvb" class="btn btn-thirds btn-success"
+                        role="button">Doneer</a>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="container mt-5">
         <div class="row">
             <div class="col-md-6 m-auto" id="main">
-                    
                 <h3 class="text-center mb-3">
                     <i class="fa fa-search" aria-hidden="true"></i>
                     Zoek je klascode
@@ -54,11 +85,11 @@
                 <div class="input-group">
                     <input type="search" id="search" class="form-control" placeholder="Voer je klascode in">
                 </div>
-                <button class="btn btn-thirds btn-primary" onclick="//return checkSubmit(13);" data-toggle="modal" data-target="#thanks"><i class="fa fa-download"
+                <button class="btn btn-thirds btn-primary" onclick="return checkSubmit(13);"><i class="fa fa-download"
                         aria-hidden="true"></i>
                     Download</button>
-                <button class="btn btn-thirds btn-info" onclick="return copyURL()"><i class="fa fa-clipboard"
-                        aria-hidden="true"></i>
+                <button class="btn btn-thirds btn-info" onclick="return copyURL()" data-toggle="modal"
+                    data-target="#exampleModal"><i class="fa fa-clipboard" aria-hidden="true"></i>
                     Kopieer ICS URL</button>
                 <a href="/windesheim/icalinfo.html" class="btn btn-thirds btn-warning" role="button">Hoe gebruik ik
                     dit?</a>
@@ -68,6 +99,9 @@
         </div>
     </div>
     <script src="js/main.js"></script>
+    <script src="js/jquery-3.4.1.slim.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
 </body>
 
 </html>

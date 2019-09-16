@@ -20,7 +20,7 @@ const searchClasscodes = async searchText => {
     }
     outputHtml(matches);
     if (matches.length === 0) {
-        const regexCase = new RegExp(`^${searchText}`, 'gi');
+        const regexCase = new RegExp(`${searchText}`, 'gi');
         let newMatches = codes.filter(code => {
             return code.id.match(regexCase) || code.code.match(regexCase) || code.klasnaam.match(regexCase);
         });
@@ -29,8 +29,11 @@ const searchClasscodes = async searchText => {
         }
         return false;
     } else if (matches.length > 0 && searchText !== "") {
-        if(await correctCasing(searchText)){
-            search.value = await correctCasing(searchText)
+        if (searchText.length > 2) {
+            let correctCase = await correctCasing(searchText)
+            if (correctCase) {
+                search.value = correctCase
+            }
         }
         return true;
     }
@@ -44,14 +47,15 @@ const checkCasing = async classcode => {
     return correctCases.length > 0
 }
 const correctCasing = async classcode => {
+    if (!classcode) return;
     const regex = new RegExp(`(?:^|\W)${classcode}(?:$|\W)`, 'gi');
     let correctCases = codes.filter(code => {
         return code.id.match(regex) || code.code.match(regex) || code.klasnaam.match(regex);
     })
-    if(correctCases[0]){
+    if (correctCases[0]) {
         return correctCases[0].code
     }
-    
+
 }
 //Show results in HTML
 const outputHtml = matches => {
@@ -74,7 +78,7 @@ const selectCard = code => {
 const checkSubmit = async key => {
     if (key == 13) {
         if (searchClasscodes(search.value) && await correctCasing(search.value)) {
-            search.value = await correctCasing(search.value)
+            showThanks();
             window.location.replace(`https://www.broodrooster.dev/windesheim/api/${search.value}`);
         } else if (searchClasscodes(search.value)) {
             alert("Ik kan deze klascode niet vinden. Is de klascode correct?")
@@ -83,7 +87,7 @@ const checkSubmit = async key => {
 }
 
 const showThanks = () => {
-    main.innerHTML
+    $('#thanks').modal()
 }
 
 function copyTextToClipboard(text) {
@@ -147,9 +151,14 @@ const copyURL = async () => {
     if (searchClasscodes(search.value) && await correctCasing(search.value)) {
         search.value = await correctCasing(search.value)
         copyTextToClipboard(`https://www.broodrooster.dev/windesheim/api/${search.value}`);
+        showThanks();
     } else if (searchClasscodes(search.value)) {
         alert("Ik kan deze klascode niet vinden. Is de klascode correct?");
     }
+}
+
+const copyLink = () => {
+    copyTextToClipboard(`https://www.broodrooster.dev/windesheim/`);
 }
 
 

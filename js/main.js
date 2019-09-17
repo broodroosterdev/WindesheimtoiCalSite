@@ -59,15 +59,16 @@ const correctCasing = async classcode => {
 }
 //Show results in HTML
 const outputHtml = matches => {
+    var html = "";
     if (matches.length > 0) {
         //console.log(matches);
-        const html = matches.map(match => `
+        html = matches.map(match => `
             <div class="card card-body mb-2" onclick=selectCard("${match.code}")>
                 <span class="text-primary">${match.code}</span>
             </div>
         `).join('');
-        matchList.innerHTML = html;
     }
+    matchList.innerHTML = html;
 }
 
 const selectCard = code => {

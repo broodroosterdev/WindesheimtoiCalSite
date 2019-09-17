@@ -9,35 +9,52 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Windesheim iCal</title>
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         .btn-thirds {
-            width: 32.6%;
+            width: 33%;
+        }
+
+        .flex-container {
+            display: flex;
+            width: 100%;
+            flex-direction: row-reverse;
+        }
+
+        div#donation {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 1%
+        }
+
+        div#donation>div {
+            width: 100%;
+        }
+
+        div#buttons {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .search {
+            margin-top: 5%;
+            margin-bottom: 5%;
+        }
+
+        @media (max-width:1100px) {
+            .flex-container {
+                flex-direction: column;
+            }
+
         }
     </style>
 </head>
 
 <body onload="init()">
-    <div class="card text-white bg-success mb-1" style="max-width: 25rem;">
-        <div class="card-body">
-            <h5 class="card-title">Wil je dit project steunen? Stuur een donatie! <a
-                    href="https://tikkie.me/pay/fhplmcknossbbdetijvb" class="btn btn-thirds btn-primary pull-right"
-                    role="button">Doneer</a></h5>
-            <div class="progress">
-                <div class="progress-bar" role="progressbar" style="width: 41.5%;"></div>
-            </div>
-            <p class="card-text">
-                Er is 4 euro per maand nodig om deze site in de lucht te houden<br>
-                Jullie hebben al €1,66 gedoneerd. Bedankt daarvoor!
-            </p>
-        </div>
-    </div>
-    <div class="card text-white bg-primary mb-1" style="max-width: 25rem;">
-        <h5 class="card-header">Ontvangen donaties:</h5>
-        <div class="card-body">
-            <p>Maaike (€0,50)</p>
-            <p>J. Broer (€0,16)</p>
-            <p>Tom (€1,00)</p>
-        </div>
-    </div>
     <div class="modal" id="thanks">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -72,8 +89,8 @@
             </div>
         </div>
     </div>
-    <div class="container mt-5">
-        <div class="row">
+    <div class="flex-container">
+        <div class="col search">
             <div class="col-md-6 m-auto" id="main">
                 <h3 class="text-center mb-3">
                     <i class="fa fa-search" aria-hidden="true"></i>
@@ -85,19 +102,49 @@
                 <div class="input-group">
                     <input type="search" id="search" class="form-control" placeholder="Voer je klascode in">
                 </div>
-                <button class="btn btn-thirds btn-primary" onclick="return checkSubmit(13);"><i class="fa fa-download"
-                        aria-hidden="true"></i>
-                    Download</button>
-                <button class="btn btn-thirds btn-info" onclick="return copyURL()" data-toggle="modal"
-                    data-target="#exampleModal"><i class="fa fa-clipboard" aria-hidden="true"></i>
-                    Kopieer ICS URL</button>
-                <a href="/windesheim/icalinfo.html" class="btn btn-thirds btn-warning" role="button">Hoe gebruik ik
-                    dit?</a>
+                <div id="buttons">
+                    <button class="btn btn-thirds btn-primary" onclick="return checkSubmit(13);"><i
+                            class="fa fa-download" aria-hidden="true"></i>
+                        Download</button>
+                    <button class="btn btn-thirds btn-info" onclick="return copyURL()" data-toggle="modal"
+                        data-target="#exampleModal"><i class="fa fa-clipboard" aria-hidden="true"></i>
+                        Kopieer ICS URL</button>
+                    <a href="/windesheim/icalinfo.html" class="btn btn-thirds btn-warning" role="button">Hoe gebruik ik
+                        dit?</a>
+                </div>
+
                 <div id="match-list">
                 </div>
             </div>
         </div>
+        <div id="donation">
+            <div class="card text-white bg-success mb-1" style="max-width: 25rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Wil je dit project steunen? Stuur een donatie! <a
+                            href="https://tikkie.me/pay/fhplmcknossbbdetijvb"
+                            class="btn btn-thirds btn-primary pull-right" role="button">Doneer</a></h5>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" style="width: 41.5%;"></div>
+                    </div>
+                    <p class="card-text">
+                        Er is 4 euro per maand nodig om deze site in de lucht te houden<br>
+                        Jullie hebben al €1,66 gedoneerd. Bedankt daarvoor!
+                    </p>
+                </div>
+            </div>
+            <div class="card text-white bg-primary mb-1" style="max-width: 25rem;">
+                <h5 class="card-header">Ontvangen donaties:</h5>
+                <div class="card-body">
+                    <p>Maaike (€0,50)</p>
+                    <p>J. Broer (€0,16)</p>
+                    <p>Tom (€1,00)</p>
+                </div>
+            </div>
+
+        </div>
     </div>
+
+
     <script src="js/main.js"></script>
     <script src="js/jquery-3.4.1.slim.min.js"></script>
     <script src="js/popper.min.js"></script>

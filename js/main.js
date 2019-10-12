@@ -1,6 +1,7 @@
 const search = document.getElementById('search');
 const matchList = document.getElementById('match-list');
 const main = document.getElementById('main');
+const success = document.getElementById('success');
 var codes = [];
 
 const init = async () => {
@@ -79,7 +80,7 @@ const selectCard = code => {
 const checkSubmit = async key => {
     if (key == 13) {
         if (searchClasscodes(search.value) && await correctCasing(search.value)) {
-            showThanks();
+            showThanks("Je bestand is gedownload!");
             window.location.replace(`https://www.broodrooster.dev/windesheim/api/${search.value}`);
         } else if (searchClasscodes(search.value)) {
             alert("Ik kan deze klascode niet vinden. Is de klascode correct?")
@@ -87,7 +88,8 @@ const checkSubmit = async key => {
     }
 }
 
-const showThanks = () => {
+const showThanks = (text) => {
+    success.innerText = text;
     $('#thanks').modal()
 }
 
@@ -111,7 +113,7 @@ const copyURL = async () => {
     if (searchClasscodes(search.value) && await correctCasing(search.value)) {
         search.value = await correctCasing(search.value)
         copyTextToClipboard(`https://www.broodrooster.dev/windesheim/api/${search.value}`);
-        showThanks();
+        showThanks("De link is gekopieerd!");
     } else if (searchClasscodes(search.value)) {
         alert("Ik kan deze klascode niet vinden. Is de klascode correct?");
     }

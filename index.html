@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    
     <title>Windesheim iCal</title>
     <style>
         * {
@@ -102,17 +103,14 @@
                     <input type="search" id="search" class="form-control" placeholder="Voer je klascode in">
                 </div>
                 <div id="buttons">
-                    <button class="btn btn-thirds btn-primary" onclick="return checkSubmit(13);"><i
-                            class="fa fa-download" aria-hidden="true"></i>
+                    <button class="btn btn-thirds btn-primary" onclick="return checkSubmit(13);" data-toggle="modal"
+                    data-target="#exampleModal"><i class="fa fa-download" aria-hidden="true"></i>
                         Download</button>
                     <button class="btn btn-thirds btn-info" onclick="return copyURL()" data-toggle="modal"
                         data-target="#exampleModal"><i class="fa fa-clipboard" aria-hidden="true"></i>
                         Kopieer ICS URL</button>
                     <a href="/windesheim/icalinfo.html" class="btn btn-thirds btn-warning" role="button">Hoe gebruik ik
                         dit?</a>
-                </div>
-
-                <div id="match-list">
                 </div>
             </div>
         </div>
@@ -147,9 +145,7 @@
 
 
     <script src="js/main.js"></script>
-    <script src="js/jquery-3.4.1.slim.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap.native/2.0.15/bootstrap-native-v4.min.js"></script>
 </body>
 
 </html>

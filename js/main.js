@@ -1,7 +1,6 @@
 const search = document.getElementById('search');
-const matchList = document.getElementById('match-list');
-const main = document.getElementById('main');
 const success = document.getElementById('success');
+const thanks = document.getElementById('thanks');
 var codes = [];
 
 const init = async () => {
@@ -12,6 +11,7 @@ const init = async () => {
 const searchClasscodes = async searchText => {
     //console.log(searchText);
     // Get matches to current text input
+    const regex = new RegExp(`^${searchText}`, 'gi');
     let matches = codes.filter(code => {
         const regex = new RegExp(`^${searchText}`, 'gi');
         return code.id.match(regex) || code.code.match(regex) || code.klasnaam.match(regex);
@@ -19,14 +19,9 @@ const searchClasscodes = async searchText => {
     if (searchText.length === 0) {
         matches = [];
     }
-    outputHtml(matches);
     if (matches.length === 0) {
-        const regexCase = new RegExp(`${searchText}`, 'gi');
-        let newMatches = codes.filter(code => {
-            return code.id.match(regexCase) || code.code.match(regexCase) || code.klasnaam.match(regexCase);
-        });
-        if (newMatches.length == 1) {
-            search.value = newMatches[0].code
+        if (matches.length == 1) {
+            search.value = matches[0].code
         }
         return false;
     } else if (matches.length > 0 && searchText !== "") {
@@ -56,26 +51,8 @@ const correctCasing = async classcode => {
     if (correctCases[0]) {
         return correctCases[0].code
     }
-
-}
-//Show results in HTML
-const outputHtml = matches => {
-    var html = "";
-    if (matches.length > 0) {
-        //console.log(matches);
-        html = matches.map(match => `
-            <div class="card card-body mb-2" onclick=selectCard("${match.code}")>
-                <span class="text-primary">${match.code}</span>
-            </div>
-        `).join('');
-    }
-    matchList.innerHTML = html;
 }
 
-const selectCard = code => {
-    //console.log(code);
-    search.value = code;
-}
 //Checks if input is valid and redirects to api
 const checkSubmit = async key => {
     if (key == 13) {
@@ -90,7 +67,8 @@ const checkSubmit = async key => {
 
 const showThanks = (text) => {
     success.innerText = text;
-    $('#thanks').modal()
+    var modal = new Modal(thanks, {});
+    modal.show();
 }
 
 function copyTextToClipboard(text) {

@@ -2,6 +2,7 @@ const search = document.getElementById('search');
 const success = document.getElementById('success');
 const thanks = document.getElementById('thanks');
 var codes = [];
+const api_url = "https://www.broodrooster.dev/windesheim/api/";
 
 const init = async () => {
     const res = await fetch('../data/classcodes.json');
@@ -58,7 +59,7 @@ const checkSubmit = async key => {
     if (key == 13) {
         if (searchClasscodes(search.value) && await correctCasing(search.value)) {
             showThanks("Je bestand is gedownload!");
-            window.location.replace(`https://www.broodrooster.dev/windesheim/api/${search.value}`);
+            window.location.replace(api_url + search.value);
         } else if (searchClasscodes(search.value)) {
             alert("Ik kan deze klascode niet vinden. Is de klascode correct?")
         }
@@ -90,7 +91,7 @@ function copyTextToClipboard(text) {
 const copyURL = async () => {
     if (searchClasscodes(search.value) && await correctCasing(search.value)) {
         search.value = await correctCasing(search.value)
-        copyTextToClipboard(`https://www.broodrooster.dev/windesheim/api/${search.value}`);
+        copyTextToClipboard(api_url + search.value);
         showThanks("De link is gekopieerd!");
     } else if (searchClasscodes(search.value)) {
         alert("Ik kan deze klascode niet vinden. Is de klascode correct?");
